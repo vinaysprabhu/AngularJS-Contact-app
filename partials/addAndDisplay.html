@@ -1,0 +1,38 @@
+<div class="box-large blurred-bg tinted">
+   <div class="container">
+      <div class="row padd">
+      	<div class="col-md-6"><a class="addnewcontact pull-left" href="#/add-friend"><i class="fa fa-user-plus"></i> Add new contact</a>
+      	</div>
+      	<div class="col-md-6"><h3 class="pull-right howdy-text">Howdy {{user}}</h3></div>
+      </div>
+      <div class="row">
+         <!-- {{allContacts}} -->
+         <table class="table table-striped">
+            <thead>
+               <tr>
+                  <!-- <th>id</th> -->
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Email</th>
+                  <th>Contact Number</th>
+                  <th>Address</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr ng-repeat="con in allContacts">
+                  <!-- <td>{{con.id}}</td> -->
+                  <td>{{con.fname}}</td>
+                  <td>{{con.lname}}</td>
+                  <td>{{con.email}}</td>
+                  <td>{{con.contact}}</td>
+                  <td>{{con.address}}</td>
+                  <td><button class="btn btn-primary btn-xs" ng-click="edit(con.id)"><i class="fa fa-edit"></i>Edit</button></td>
+                  <td><button class="btn btn-danger btn-xs" ng-click="deleteContactFunc(con.id,con.fname)"><i class="fa fa-times"></i>Delete</button></td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="box-large blurred-bg tinted">
+<div class="container content">	
+	<div class="row">
+		<div class="col-md-6 pull-right"><h2 class="howdy-text padd">Hi {{user}}</h2></div>	
+		<div class="col-md-6 pull-left"><h4 class="howdy-text padd">Add new contact</h4></div>	
+	</div>
+	
+
+	<form name="form" novalidate>
+		    <div class="row" ng-class="{true: 'error'}[submitted && form.fname.$invalid && form.lname.$invalid && form.email.$invalid ]">
+
+		        <div class="form-group col-md-8">
+		          First Name*:
+		          <input type="text" name="fname" class="form-control" ng-model="fname" required />
+		          <span style="color:red" ng-show="form.fname.$dirty && form.fname.$invalid">
+		          <span ng-show="form.fname.$error.required">First Name is Required</span>
+		          </span>
+		        </div>
+		        <div class="form-group col-md-8">
+		          Last Name*:
+		          <input type="text" name="lname" class="form-control" ng-model="lname" required />
+		          <span style="color:red" ng-show="form.lname.$dirty && form.lname.$invalid">
+		          <span ng-show="form.lname.$error.required">Last Name is Required</span>
+		          </span>
+		        </div>
+		        <div class="form-group col-md-8">
+		          Email*:
+		          <input type="email" name="email" class="form-control" ng-model="email" required />
+			      <span style="color:red" ng-show="form.email.$dirty && form.email.$invalid">
+			      <span ng-show="form.email.$error.required">Email is required.</span>
+			      <span ng-show="form.email.$error.email">Invalid email address.</span>
+			      </span>
+		        </div>
+		        <div class="form-group col-md-8">
+		          Contact Number:
+		          <input type="number" name="contact" class="form-control" ng-model="contact" required />
+		          </span>
+		        </div>
+		        <div class="form-group col-md-8">
+		          Address:<br>
+		          <textarea rows="4" name="address" ng-model="address" id="description" cols="50"></textarea>
+		        </div>
+
+		        <div class="form-group col-md-8">
+		          <!-- <button class="btn btn-primary" ng-disabled="form.email.$invalid || form.name.$invalid || form.date.$invalid || form.contact.$invalid" type="submit">Register</button> -->
+		          <p><input class="btn btn-primary" type="submit" name="submit" value="Create" ng-disabled="form.fname.$invalid || form.lname.$invalid || form.email.$invalid" ng-click="addFriend(fname,lname,email,contact,address)"> <input class="btn btn-primary" type="button" name="back" value="Back" onclick="history.back()" ></p>
+		        </div>
+		    </div>
+	</form>	
+</div>
+</div>

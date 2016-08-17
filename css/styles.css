@@ -1,0 +1,161 @@
+/*.header{
+  width: 800px;
+  height: 80px;
+  text-align: center;
+  background-color: #bdbdbd;
+}
+.footer{
+  background-color: #bdbdbd;
+  text-align: center;
+}
+.leftmenu{
+  height: 500px;
+  background-color: #d8d8d8;
+  width: 150px;
+}
+.maincontent{
+  height: 500px;
+  background-color: #e6e6e6;
+  width: 650px;
+}
+a{
+  display: block;
+  padding: 5px;
+}*/
+
+/*body {
+  background: url(http://evolllution.com/wp-content/uploads/2012/09/Fotolia_43099276_Subscription_Monthly_XXL-copy.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 0.8;
+  filter: blur(50px);
+}
+.background{
+    background-color: lightgrey;
+    width: 100%;
+    border: 25px solid #006699;
+    padding: 10px;
+    
+  }*/
+
+.small-font{
+  font-size: 14px;
+}
+
+@import "compass/css3";
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:100,400,700);
+
+
+body{
+  background-image:url(https://static.pexels.com/photos/4970/fashion-person-woman-hand.jpg);
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  font-family:Raleway, Open Sans, Droid Sans, Roboto,arial, sans-serif;
+}
+.blurred-bg{
+
+  /*background-image:url(https://lh3.googleusercontent.com/-m8TxQMObg6c/U474EWu7Y9I/AAAAAAAAI2k/xkRGoIEC1iU/s1600/blur.jpg);*/
+  background-color: rgba(255, 255, 255, 0.67);
+  background-repeat:no-repeat;
+  @include background-size(cover);
+  background-attachment: fixed;
+   
+  &.tinted{
+    @include background-image(linear-gradient(0deg, rgba(255,255,255,.2),rgba(255,255,255,.2)),url(http://www.dentons.com/~/media/Images/Website/Background%20Images/Landing%20Pages/Whats%20Different%20About%20Dentons/Contact%20us/contact3.jpg));
+  }
+  &.shaded{
+    @include background-image(linear-gradient(0deg, rgba(0,0,0,.2),rgba(0,0,0,.2)),url(http://www.dentons.com/~/media/Images/Website/Background%20Images/Landing%20Pages/Whats%20Different%20About%20Dentons/Contact%20us/contact3.jpg));
+  }
+}
+.box{
+  width:500px;
+  height:300px;
+  left:-webkit-calc( 50% - 250px );
+  top:20%;
+  position:absolute;
+  border-radius:5px;
+  @include box-shadow(0 20px 30px rgba(0,0,0,.6));
+  border:1px solid rgba(255,255,255,.3);
+  padding:20px;
+  text-align: center;
+  @include box-sizing(border-box);
+  text-shadow:0 1px 1px rgba(0,0,0,.4);
+  display: flex;
+  transition: box-shadow .3s ease;
+  
+  &:active{
+    cursor:move;
+    @include box-shadow(0 20px 50px rgba(0,0,0,.9));
+  }
+  
+  .content{
+    margin: auto;
+  }
+}
+
+.box-large{
+    /* width: 80%; */
+    /* height: 350px; */
+    /* left: -webkit-calc( 50% - 250px ); */
+    /* left: 142px; */
+    /* top: 20%; */
+    margin: 5%;
+    position: absolute;
+    border-radius: 5px;
+}
+
+h1,h2,a,p{
+  color:white;
+  font-weight:100;
+  
+  .tinted &{
+    color:black;
+    text-shadow:0 1px 1px rgba(255,255,255,.2);
+  }
+}
+h2{ font-size: 14px }
+p{ 
+  margin: 20px;
+  &.related{
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #444;
+    
+    a{
+      font-weight: 700;
+      text-decoration: none;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.addnewcontact{
+    background-color: #006699;
+    border-color: #e7e7e7;
+    padding: 10px;
+    border-radius:5px;
+    cursor: pointer;
+    color: white;
+
+}
+.createcontact{
+    background-color: #006699;
+    border-color: #e7e7e7;
+    padding: 10px;
+    border-radius:5px;
+    color: white;
+}
+
+.padd{
+  padding: 10px;
+}
+.howdy-text{
+  text-shadow:6px 7px 14px #006699;
+}
