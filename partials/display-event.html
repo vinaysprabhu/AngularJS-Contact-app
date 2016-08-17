@@ -1,0 +1,37 @@
+<div class="container padd" ng-controller="displayController">
+	<h3 class="heading"><i class="glyphicon glyphicon-th-large"></i> List of Events</h3>
+
+	<div class="col-md-12 input-group searchbox">
+	  <input class="form-control input-lg form-control" type="text" ng-model="searchEvent"  placeholder="search an event">
+	  <span class="input-group-addon">
+         <i class="fa fa-search"></i>
+      </span>
+    </div>  
+    
+	<table class="table table-striped ">
+		<tr>
+			<th>ID</th>
+			<th>Event Name</th>
+			<th>Date</th>
+			<th>Organizer</th>
+			<th>Organizer Email</th>
+			<th>Venue</th>
+			<th>Description</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+		<tr ng-repeat="event in data | filter:searchEvent">
+			<td>{{event.eventID}}</td>
+			<td>{{event.name}}</td>
+			<td>{{event.date | date:"dd/MMM/yyyy"}} </td>
+			<td>{{event.organizer}}</td>
+			<td>{{event.oemail}}</td>
+			<td>{{event.venue}}</td>
+			<td>{{event.description}}</td>
+			<td><button class="btn btn-primary btn-xs" ng-click="edit(event.eventID)"><i class="fa fa-edit"></i> Edit</button></td>
+			<td><button class="btn btn-danger btn-xs" ng-click="delete(event.eventID,event.name)"><i class="fa fa-times"></i> Delete</button></td>
+		</tr>
+	</table>
+	{{deletemsg}} {{deleteid}}<br>
+	{{deleteConfirmed}}
+</div>
