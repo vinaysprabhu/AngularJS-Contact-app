@@ -4,37 +4,28 @@
 	</div>
 	<br>
 	<form name="form" novalidate>
-	
 	    <span ng-class="{true: 'error'}[submitted && form.mainName.$invalid ]">
 
 	        <div class="form-group row">
-	          <div class="col-md-6">{{enterName}}</div>	
+	          <div class="col-md-6">{{enterName}}</div>
 	          <div class="col-md-6">
 		          <input type="text" name="mainName" class="form-control" ng-model="mainName" required />
 		          <span style="color:red" ng-show="form.mainName.$dirty && form.mainName.$invalid">
 		          <span ng-show="form.mainName.$error.required" class="small-font">Please enter your username</span>
 		          </span>
-	          </div>	
-	          
+	          </div>
 	        </div>
-
 	    </span>
-
-	   
         <div class="form-group row">
           <p><input class="btn btn-primary" type="submit" name="submit" value="submit" ng-disabled="form.mainName.$invalid"  ng-click="myNameValidate(mainName)"></p>
-
-        </div>	    
-	</form>	
+        </div>
+	</form>
 
 	<div class="row">
 			<p>New users <a href="#/createContact">Click here</a></p>
 	</div>
-
 	<div class="row">
 		<p style="color:red">{{validateMsg}}</p>
 	</div>
-
 </div>
-
 </div>
